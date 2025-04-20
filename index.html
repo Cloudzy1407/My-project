@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Randhu Hutama Syachlin - Software Engineer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .nav-link {
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-900 text-white">
+  <header class="fixed-top bg-gray-800 shadow-md">
+    <div class="container d-flex justify-content-between align-items-center py-3">
+      <h1 class="h4 mb-0">Randhu Hutama Syachlin</h1>
+      <nav class="d-flex align-items-center">
+        <ul class="nav me-3">
+          <li class="nav-item"><a href="#home" class="nav-link text-white">Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link text-white">About</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link text-white">Projects</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link text-white">Contact</a></li>
+        </ul>
+        <input type="text" placeholder="Search..." class="form-control form-control-sm me-3" style="width: 200px;" />
+        <button onclick="toggleTheme()" class="btn btn-outline-light btn-sm">🌓 Toggle Mode</button>
+      </nav>
+    </div>
+  </header>
+
+  <button id="backToTop" class="btn btn-primary position-fixed bottom-0 end-0 m-3 d-none">⬆</button>
+
+  <section id="home" class="vh-100 d-flex align-items-center justify-content-center bg-gray-900 text-center">
+    <div class="bg-gray-800 bg-opacity-75 p-5 rounded" data-aos="fade-up">
+      <h2 class="display-4 fw-bold mb-3">Hello, I'm Randhu</h2>
+      <p class="lead mb-4">A passionate Software Engineer crafting web experiences.</p>
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+    </div>
+  </section>
+
+  <section id="about" class="py-5 bg-gray-800">
+    <div class="container">
+      <h2 class="h3 border-bottom pb-2 mb-4" data-aos="fade-right">About Me</h2>
+      <p class="mb-4" data-aos="fade-left">
+        I'm Randhu Hutama Syachlin, a software engineer who loves building modern, responsive websites and engaging user experiences. With strong skills in HTML, CSS, JavaScript, and Tailwind CSS, I specialize in turning ideas into functional and visually stunning digital products.
+      </p>
+      <div class="row">
+        <div class="col-md-4 mb-3" data-aos="zoom-in">
+          <p>HTML & CSS</p>
+          <div class="progress">
+            <div class="progress-bar bg-info" style="width: 95%;"></div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3" data-aos="zoom-in">
+          <p>JavaScript</p>
+          <div class="progress">
+            <div class="progress-bar bg-info" style="width: 90%;"></div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3" data-aos="zoom-in">
+          <p>TailwindCSS</p>
+          <div class="progress">
+            <div class="progress-bar bg-info" style="width: 85%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="py-5 bg-gray-900">
+    <div class="container">
+      <h2 class="h3 text-center border-bottom pb-2 mb-4" data-aos="fade-up">Projects</h2>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="flip-left">
+          <div class="card bg-gray-800 text-white">
+            <div class="card-body">
+              <h5 class="card-title">Portfolio Website</h5>
+              <p class="card-text">My personal portfolio to showcase my skills, projects, and contact details using TailwindCSS.</p>
+              <a href="#" class="btn btn-link text-info">View Project →</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="flip-left">
+          <div class="card bg-gray-800 text-white">
+            <div class="card-body">
+              <h5 class="card-title">Task Manager App</h5>
+              <p class="card-text">A simple task manager built with vanilla JavaScript and CSS animations.</p>
+              <a href="#" class="btn btn-link text-info">View Project →</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="flip-left">
+          <div class="card bg-gray-800 text-white">
+            <div class="card-body">
+              <h5 class="card-title">Landing Page UI</h5>
+              <p class="card-text">A clean, responsive landing page designed with TailwindCSS.</p>
+              <a href="#" class="btn btn-link text-info">View Project →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-3 bg-black text-center text-secondary">
+    &copy; 2025 Randhu Hutama Syachlin. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleTheme() {
+      const isDark = document.body.classList.toggle('bg-gray-900');
+      document.body.classList.toggle('text-white', isDark);
+      document.body.classList.toggle('bg-gray-100', !isDark);
+      document.body.classList.toggle('text-black', !isDark);
+    }
+
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('d-none', window.scrollY <= 200);
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+
+</html>

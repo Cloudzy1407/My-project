@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopHub - Product Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #fef6e4, #f9e0c5);
+      font-family: 'Arial', sans-serif;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ff6f61;
+    }
+
+    .btn-custom {
+      background-color: #ff6f61;
+      color: #fff;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-custom:hover {
+      background-color: #e65b50;
+    }
+
+    .related-products {
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .related-products:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .scroll-indicator {
+      position: fixed;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      z-index: 1000;
+    }
+
+    .scroll-indicator div {
+      width: 5px;
+      height: 50px;
+      margin-bottom: 5px;
+      background: #ddd;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .scroll-indicator div.active {
+      background: #ff6f61;
+    }
+
+    .floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ff6f61;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .floating-btn:hover {
+      background: #e65b50;
+    }
+
+    nav .nav-link:hover {
+      background-color: orange;
+      border-radius: 5px;
+    }
+
+    nav .nav-link {
+      transition: background-color 1s ease-in-out, border-radius 1s ease-in-out;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+    <div id="indicator1"></div>
+    <div id="indicator2"></div>
+    <div id="indicator3"></div>
+  </div>
+
+  <header class="bg-white py-3 shadow-sm">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="h4 mb-0">Arcynox</h1>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a href="home.html" class="nav-link text-dark">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark">Shop</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark">Blog</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-dark">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="d-flex align-items-center">
+        <input type="text" class="form-control me-3" placeholder="Search...">
+        <span class="me-3">$239.00</span>
+        <a href="cart.html" class="d-flex align-items-center" style="background-color: #f8f9fa; padding: 5px 10px; border-radius: 5px; text-decoration: none; color: inherit;">
+          <i class="bi bi-cart me-2"></i>
+          <span>(0)</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Shop</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Product Details</li>
+      </ol>
+    </nav>
+
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <div class="product-card">
+          <h2 class="h4">Adidas Ultraboost 22</h2>
+          <p class="text-muted">Experience ultimate comfort and performance with Adidas Ultraboost 22.</p>
+          <div class="d-flex align-items-center mb-3">
+            <span class="me-2">Rating:</span>
+            <span class="text-warning">★★★★★</span>
+            <span class="ms-2 text-muted">(120 reviews)</span>
+ 
+          </div>
+          <div class="price">$180.00</div>
+
+          <!-- Color Selection -->
+          <div class="mt-4">
+            <h6>Color:</h6>
+            <div class="d-flex">
+              <button class="btn btn-outline-secondary rounded-circle me-2" style="width: 30px; height: 30px; background-color: orange;"></button>
+              <button class="btn btn-outline-secondary rounded-circle me-2" style="width: 30px; height: 30px; background-color: blue;"></button>
+              <button class="btn btn-outline-secondary rounded-circle me-2" style="width: 30px; height: 30px; background-color: brown;"></button>
+            </div>
+          </div>
+
+          <!-- Size Selection -->
+          <div class="mt-4">
+            <h6>Size:</h6>
+            <div class="d-flex">
+              <button class="btn btn-outline-secondary me-2">37</button>
+              <button class="btn btn-outline-secondary me-2">38</button>
+              <button class="btn btn-outline-secondary me-2">39</button>
+              <button class="btn btn-outline-secondary me-2">40</button>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <button class="btn btn-custom px-4 py-2">
+              <i class="bi bi-cart"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img src="adidas_ultraboots_22-removebg-preview.png" alt="Adidas Ultraboost 22" class="img-fluid rounded">
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <div class="product-card">
+          <h2 class="h4">New Balance 574</h2>
+          <p class="text-muted">Classic design meets modern comfort in the New Balance 574.</p>
+          <div class="d-flex align-items-center mb-3">
+            <span class="me-2">Rating:</span>
+            <span class="text-warning">★★★★★</span>
+            <span class="ms-2 text-muted">(110 reviews)</span>
+          </div>
+          <div class="price">$100.00</div>
+
+          <!-- Color Selection -->
+          <div class="mt-4">
+            <h6>Color:</h6>
+            <div class="d-flex">
+              <button class="btn btn-outline-secondary rounded-circle me-2" style="width: 30px; height: 30px; background-color: orange;"></button>
+              <button class="btn btn-outline-secondary rounded-circle me-2" style="width: 30px; height: 30px; background-color: blue;"></button>
+              <button class="btn btn-outline-secondary rounded-circle me-2" style="width: 30px; height: 30px; background-color: brown;"></button>
+            </div>
+          </div>
+
+          <!-- Size Selection -->
+          <div class="mt-4">
+            <h6>Size:</h6>
+            <div class="d-flex">
+              <button class="btn btn-outline-secondary me-2">37</button>
+              <button class="btn btn-outline-secondary me-2">38</button>
+              <button class="btn btn-outline-secondary me-2">39</button>
+              <button class="btn btn-outline-secondary me-2">40</button>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <button class="btn btn-custom px-4 py-2">
+              <i class="bi bi-cart"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img src="new_balance_574-removebg-preview.png" alt="New Balance 574" class="img-fluid rounded">
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <div class="product-card">
+          <h2 class="h4">Nike Air Max 270</h2>
+          <p class="text-muted">Nike's Air Force 1s were among the most popular sneakers this year.</p>
+          <div class="d-flex align-items-center mb-3">
+            <span class="me-2">Rating:</span>
+            <span class="text-warning">★★★★☆</span>
+            <span class="ms-2 text-muted">(60 reviews)</span>
+          </div>
+          <div class="price">$290.00</div>
+
+          <!-- Color Selection -->
+          <div class="mt-4">
+            <h6>Color:</h6>
+            <div class="d-flex">
+              <button class="btn btn-outline-secondary rounded-circle me-2" style="width: 30px; height: 30px; background-color: orange;"></button>
+              <button class="btn btn-outline-secondary rounded-circle me-2" style="width: 30px; height: 30px; background-color: blue;"></button>
+              <button class="btn btn-outline-secondary rounded-circle me-2" style="width: 30px; height: 30px; background-color: brown;"></button>
+            </div>
+          </div>
+
+          <!-- Size Selection -->
+          <div class="mt-4">
+            <h6>Size:</h6>
+            <div class="d-flex">
+              <button class="btn btn-outline-secondary me-2">37</button>
+              <button class="btn btn-outline-secondary me-2">38</button>
+              <button class="btn btn-outline-secondary me-2">39</button>
+              <button class="btn btn-outline-secondary me-2">40</button>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <button class="btn btn-custom px-4 py-2">
+              <i class="bi bi-cart"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img src="nike_air_max_270-removebg-preview.png" alt="Nike Air Max 270" class="img-fluid rounded">
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <div class="product-card">
+          <h2 class="h4">Puma RS-X</h2>
+          <p class="text-muted">Bold and stylish, the Puma RS-X is perfect for everyday wear.</p>
+          <div class="d-flex align-items-center mb-3">
+            <span class="me-2">Rating:</span>
+            <span class="text-warning">★★★★☆</span>
+            <span class="ms-2 text-muted">(85 reviews)</span>
+          </div>
+          <div class="price">$150.00</div>
+
+          <!-- Color Selection -->
+          <div class="mt-4">
+            <h6>Color:</h6>
+            <div class="d-flex">
+              <button class="btn btn-outline-secondary rounded-circle me-2" style="width: 30px; height: 30px; background-color: orange;"></button>
+              <button class="btn btn-outline-secondary rounded-circle me-2" style="width: 30px; height: 30px; background-color: blue;"></button>
+              <button class="btn btn-outline-secondary rounded-circle me-2" style="width: 30px; height: 30px; background-color: brown;"></button>
+            </div>
+          </div>
+
+          <!-- Size Selection -->
+          <div class="mt-4">
+            <h6>Size:</h6>
+            <div class="d-flex">
+              <button class="btn btn-outline-secondary me-2">37</button>
+              <button class="btn btn-outline-secondary me-2">38</button>
+              <button class="btn btn-outline-secondary me-2">39</button>
+              <button class="btn btn-outline-secondary me-2">40</button>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <button class="btn btn-custom px-4 py-2">
+              <i class="bi bi-cart"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img src="puma_rs-x-removebg-preview.png" alt="Puma RS-X" class="img-fluid rounded">
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <div class="product-card">
+          <h2 class="h4">Reebok Nano X1</h2>
+          <p class="text-muted">The ultimate training shoe for all your fitness needs.</p>
+          <div class="d-flex align-items-center mb-3">
+            <span class="me-2">Rating:</span>
+            <span class="text-warning">★★★★☆</span>
+            <span class="ms-2 text-muted">(95 reviews)</span>
+          </div>
+          <div class="price">$130.00</div>
+
+          <!-- Color Selection -->
+          <div class="mt-4">
+            <h6>Color:</h6>
+            <div class="d-flex">
+              <button class="btn btn-outline-secondary rounded-circle me-2" style="width: 30px; height: 30px; background-color: orange;"></button>
+              <button class="btn btn-outline-secondary rounded-circle me-2" style="width: 30px; height: 30px; background-color: blue;"></button>
+              <button class="btn btn-outline-secondary rounded-circle me-2" style="width: 30px; height: 30px; background-color: brown;"></button>
+            </div>
+          </div>
+
+          <!-- Size Selection -->
+          <div class="mt-4">
+            <h6>Size:</h6>
+            <div class="d-flex">
+              <button class="btn btn-outline-secondary me-2">37</button>
+              <button class="btn btn-outline-secondary me-2">38</button>
+              <button class="btn btn-outline-secondary me-2">39</button>
+              <button class="btn btn-outline-secondary me-2">40</button>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <button class="btn btn-custom px-4 py-2">
+              <i class="bi bi-cart"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img src="reebook_nano_x1-removebg-preview.png" alt="Reebok Nano X1" class="img-fluid rounded">
+      </div>
+    </div>
+
+    <!-- Related Products Carousel -->
+    <section class="mt-5">
+      <h3 class="h5 mb-4">Related Products</h3>
+      <div id="relatedProductsCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row g-3">
+              <div class="col-md-3">
+                <div class="related-products">
+                  <img src="nike_air_max_270-removebg-preview.png" alt="Nike Air Max 270" class="img-fluid rounded mb-3">
+                  <h5 class="h6">Nike Air Max 270</h5>
+                  <p class="text-muted">$290.00</p>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="related-products">
+                  <img src="adidas_ultraboots_22-removebg-preview.png" alt="Adidas Ultraboost 22" class="img-fluid rounded mb-3">
+                  <h5 class="h6">Adidas Ultraboost 22</h5>
+                  <p class="text-muted">$180.00</p>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="related-products">
+                  <img src="puma_rs-x-removebg-preview.png" alt="Puma RS-X" class="img-fluid rounded mb-3">
+                  <h5 class="h6">Puma RS-X</h5>
+                  <p class="text-muted">$150.00</p>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="related-products">
+                  <img src="reebook_nano_x1-removebg-preview.png" alt="Reebok Nano X1" class="img-fluid rounded mb-3">
+                  <h5 class="h6">Reebok Nano X1</h5>
+                  <p class="text-muted">$130.00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating Action Button -->
+  <button class="floating-btn" onclick="scrollToTop()">⬆</button>
+
+  <footer class="bg-white py-3 text-center">
+    &copy; 2025 Arcynox. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Scroll to Top Functionality
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Scroll Indicator Logic
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercentage = (scrollPosition / windowHeight) * 100;
+
+      document.querySelectorAll('.scroll-indicator div').forEach((indicator, index) => {
+        if (scrollPercentage > index * 33) {
+          indicator.classList.add('active');
+        } else {
+          indicator.classList.remove('active');
+        }
+      });
+    });
+
+    // Inisialisasi jumlah item di cart
+    let cartCount = 0; // Nilai awal diubah menjadi 0
+
+    // Fungsi untuk memperbarui tampilan jumlah item di cart
+    function updateCartCount() {
+      const cartElement = document.querySelector('.d-flex.align-items-center a span');
+      cartElement.textContent = `(${cartCount})`;
+    }
+
+    // Tambahkan event listener ke semua tombol "Add to Cart"
+    document.querySelectorAll('.btn-custom').forEach(button => {
+      button.addEventListener('click', () => {
+        cartCount += 1; // Tambahkan 1 ke jumlah item di cart
+        updateCartCount(); // Perbarui tampilan jumlah item di cart
+      });
+    });
+  </script>
+</body>
+
+</html>
